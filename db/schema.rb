@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 20161113050112) do
   create_table "payments", force: :cascade do |t|
     t.string   "email"
     t.string   "token"
-    t.integer  "tenant_id_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "tenant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "payments", ["tenant_id_id"], name: "index_payments_on_tenant_id_id"
+  add_index "payments", ["tenant_id"], name: "index_payments_on_tenant_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
